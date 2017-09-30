@@ -22,6 +22,12 @@ import static java.security.AccessController.getContext;
 
 public class ContactsAdapter extends ArrayAdapter<Contacts> {
 
+    class ViewHolder {
+        TextView Name;
+        TextView Phone;
+        TextView Gender;
+    }
+
     public ContactsAdapter(@NonNull Context context, @NonNull List<Contacts> objects) {
 
         super(context,0,objects);
@@ -30,24 +36,27 @@ public class ContactsAdapter extends ArrayAdapter<Contacts> {
 
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
 
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.contact_item_list,parent,false);
-
-        Contacts u = getItem(position);
-        TextView Name = (TextView) view.findViewById(R.id.Name);
-        TextView Phone = (TextView) view.findViewById(R.id.Phone);
-        TextView Gender = (TextView) view.findViewById(R.id.Gender);
-
-        Name.setText(u.getName());
-        Phone.setText(u.getPhone());
-        Gender.setText(u.getGender());
+        View view = convertView;
+        ViewHolder viewHolder = new ViewHolder();
+        Contacts contacts= getItem(position);
 
 
+        if(view==null) {
+            view = LayoutInflater.from(getContext()).inflate(R.layout.contact_item_list, parent, false);
+
+            TextView Name = (TextView) view.findViewById(R.id.Name);
+            TextView Phone = (TextView) view.findViewById(R.id.Phone);
+            TextView Gender = (TextView) view.findViewById(R.id.Gender);
+            viewHolder.Name=Name;
+            viewHolder.Phone=Phone;
+            viewHolder.Gender=Gender;
+            view.setTag(viewHolder);
+        }
+        viewHolder = (ViewHolder) view.getTag();
+
+        viewHolder.Name.setText(contacts.getName());
+        viewHolder.Phone.setText(contacts.getPhone());
+        viewHolder.Gender.setText(contacts.getGender());
         return view;
-
-
-
     }
-
-
-
 }

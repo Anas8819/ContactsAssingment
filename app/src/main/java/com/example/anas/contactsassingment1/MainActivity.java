@@ -59,18 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
         listView.setAdapter(contactsAdapter);
 
-
-        /*callButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent i=new Intent(Intent.ACTION_DIAL,Uri.parse("tel:03084367772"));
-            }
-        });
-        startActivity(i);
-*/
-
-
     }
 
     public void call(View view) {
