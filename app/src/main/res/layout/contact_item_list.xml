@@ -21,22 +21,19 @@
                 android:id="@+id/Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="This is name" />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/Phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="03063033030303" />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/Gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Male" />
+                android:layout_weight="1" />
         </LinearLayout>
 
         <Button

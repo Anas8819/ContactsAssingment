@@ -5,20 +5,10 @@ package com.example.anas.contactsassingment1.models;
  */
 
 public class Contacts {
-    private int id;
-    private String name;
-    private String  phone;
-    private String gender;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", Name='" + name + '\'' +
-                ", Phone='" + phone + '\'' +
-                ", Gender='" + gender + '\'' +
-                '}';
-    }
+    public int id;
+    public String name;
+    public String  phone;
+    public String gender;
 
 
     public Contacts(int id, String name, String phone, String gender) {
